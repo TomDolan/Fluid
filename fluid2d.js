@@ -4,7 +4,7 @@
 
 var c = document.getElementById("fluid");
 var hex = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
-var N = 300, squareSize = 600, h = squareSize/N, size = (N+2)*(N+2);
+var N = 200, squareSize = 600, h = squareSize/N, size = (N+2)*(N+2);
 var dt = .3; 
 
 var u = new Array(size), v = new Array(size);
@@ -34,7 +34,7 @@ startAnimation();
 function setVelocity(){
 	for(i = 0; i < N+2; i++){
 		for (j = 0; j < N+2; j++){
-			u[idx(i,j)]=0, v[idx(i,j)]=0;
+			u[idx(i,j)]=Math.random()-.5, v[idx(i,j)]=Math.random()-.5;
 			uOld[idx(i,j)]=u[idx(i,j)], vOld[idx(i,j)]=v[idx(i,j)];
 		}
 	}
@@ -46,9 +46,9 @@ function setDensity(){
 			print.fillStyle = "#024";
 			print.fillRect((i-1)*h, (j-1)*h, h+1, h+1);
 			if (j < N/2){
-				//dens[idx(i,j)] = 1, densOld[idx(i,j)] = 1;
-				//print.fillStyle = "#f24";
-				//print.fillRect((i-1)*h, (j-1)*h, h, h);
+				dens[idx(i,j)] = 1, densOld[idx(i,j)] = 1;
+				print.fillStyle = "#f24";
+				print.fillRect((i-1)*h, (j-1)*h, h, h);
 			}
 		}
 	}	
