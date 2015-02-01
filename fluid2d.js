@@ -142,7 +142,7 @@ function advect(){
 				var colour = "#" + f + 2 + 4;
 				//print.clearRect((i-1)*h, (j-1)*h, h, h);
 				print.fillStyle = colour;	
-				print.fillRect((i-1)*h, (j-1)*h, h+1, h+1);	
+				print.fillRect((i-1)*h, (j-1)*h, h, h);	
 			}
 		}
 	}
@@ -229,23 +229,10 @@ function project(){
 	setVelocityBoundary(); 
 }
 
-//print functions//
-function updatePrint(){
-	for (i = 1; i<=N; i++){
-		for (j = 1; j <= N; j++){
-			g = Math.floor(dens[idx(i,j)]*15);
-			//if(G[idx(i,j)] != g) {
-				//G[idx(i,j)] = g;
-				var f = hex[g];
-				var colour = "#" + f + "2" + "4";
-				//print.clearRect((i-1)*h, (j-1)*h, h, h);
-				print.fillStyle = colour;	
-				print.fillRect((i-1)*h, (j-1)*h, h+1, h+1);	
-			//}
-		}
-	}
+//housekeeping functions//
+function idx(i, j){
+	return i+(N+2)*j;
 }
-
 function setG(){
 	for (i = 1; i<=N; i++){
 		for (j = 1; j <= N; j++){
@@ -255,10 +242,6 @@ function setG(){
 	}
 }
 
-//housekeeping functions//
-function idx(i, j){
-	return i+(N+2)*j;
-}
 function setBoundary(){
 	for (i = 1; i <= N; i++){
 		dens[idx(0,i)] = dens[idx(1,i)];
