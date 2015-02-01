@@ -4,7 +4,7 @@
 
 var c = document.getElementById("fluid");
 var hex = ["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"];
-var N = 200, squareSize = 600, h = squareSize/N, size = (N+2)*(N+2);
+var N = 300, squareSize = 600, h = squareSize/N, size = (N+2)*(N+2);
 var dt = .3; 
 
 var u = new Array(size), v = new Array(size);
