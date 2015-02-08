@@ -8,7 +8,7 @@ var N = 1700, size = 10*N;
 var squareSize = 600;
 var m = 400;
 var dm = squareSize/m;
-var dt = 0.1; 
+var dt = 0.15; 
 var h = 15; //radius of smoothing kernel
 var k = 8; //pressure const
 var p0 = 2.3; //rest pressure
